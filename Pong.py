@@ -66,12 +66,28 @@ class player():
     def draw(self):
         pygame.draw.rect(win, self.color, (self.x, self.y, 20, 100))
 
+def colllide():
+    # Es wird überprüft ob der __linke__ Spieler berührt wird, wenn ja wird der Balla abgestoßen.
+    if ball.velx < 0:
+        # Es wird überprüft ob der Ball auf der gleichen y-Höhe ist wie der linke Spieler.
+        if ball.y >= pl_left.y and ball.y <= (pl_left.y + 100):
+            # Es wird überprüft ob der Bal auf der gleichen x-Höhe sit wie der linke Spieler.
+            if ball.x <= 60:
+                ball.x = 60
+                ball.velx = ball.velx * -1
+    # Es wird überprüft ob der __rechte__ Spieler berührt wird, wenn ja wird der Balla abgestoßen.
+    elif ball.velx > 0:
+        # Es wird überprüft ob der Ball auf der gleichen y-Höhe ist wie der rechte Spieler.
+        if ball.y >= pl_right.y and ball.y <= (pl_right.y + 100):
+            # Es wird überprüft ob der Bal auf der gleichen x-Höhe sit wie der linke Spieler.
+            if ball.x >= 1140:
+                ball.x = 1140
+                ball.velx = ball.velx * -1
 
 # Instanzen des Balles und der Spieler werden erstellt.
-pl_left = player(x=20, y=300, vel=5, color=(0, 255, 0))
-pl_right = player(x=1160, y=300, vel=5, color=(0, 0, 255))
+pl_left = player(x=20, y=300, vel=6, color=(0, 255, 0))
+pl_right = player(x=1160, y=300, vel=6, color=(0, 0, 255))
 ball = ball()
-
 # Main-Loop
 run = 1
 while run:
@@ -90,6 +106,7 @@ while run:
     pl_right.moveright()
     ball.moveball()
 
+    colllide()
     # Instanzen werden gezeichnet.
     pl_left.draw()
     pl_right.draw()
