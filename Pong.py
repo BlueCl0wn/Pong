@@ -2,8 +2,13 @@ import pygame
 from random import randint
 import time
 
-# Spielefenster wird erstellt und weitere Nebeneinstellungen
 pygame.init()
+
+
+# Öffnen von Images
+pauseimg = pygame.image.load("pause.png")
+
+# Spielefenster wird erstellt und weitere Nebeneinstellungen
 sizex = 1200
 sizey = 675
 win = pygame.display.set_mode((sizex, sizey))
@@ -84,6 +89,22 @@ def colllide():
                 ball.x = 1140
                 ball.velx = ball.velx * -1
 
+pause = -1
+# Funktion die über ob die Escape Taste für Pausemenu gedrückt wurde.
+def pauseupdate():
+    global pause
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_ESCAPE]:
+        pause = pause * -1
+
+# Funktion die das Bild für die Pause einfügt wenn var pause 1 ist.
+def pausemenu():
+    global pause
+    if pause == 1:
+        win.blit(pauseimg, (421, 219))
+
+
+
 # Instanzen des Balles und der Spieler werden erstellt.
 pl_left = player(x=20, y=300, vel=6, color=(0, 255, 0))
 pl_right = player(x=1160, y=300, vel=6, color=(0, 0, 255))
@@ -98,19 +119,24 @@ while run:
         if event.type == pygame.QUIT:
             run = 0
 
-    # Füllen des Spielefensters.
-    win.fill((255, 255, 255))
+    pauseupdate()
+    if pause == 1:
+        pausemenu()
+    elif pause == -1:
+        # Füllen des Spielefensters.
+        win.fill((255, 255, 255))
 
-    # Funktionen zum Bewegen der Instanzen.
-    pl_left.moveleft()
-    pl_right.moveright()
-    ball.moveball()
+        # Funktionen zum Bewegen der Instanzen.
+        pl_left.moveleft()
+        pl_right.moveright()
+        ball.moveball()
 
-    colllide()
-    # Instanzen werden gezeichnet.
-    pl_left.draw()
-    pl_right.draw()
-    ball.draw()
+        colllide()
+
+        # Instanzen werden gezeichnet.
+        pl_left.draw()
+        pl_right.draw()
+        ball.draw()
 
     pygame.display.update()
 
