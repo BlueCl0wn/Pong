@@ -93,9 +93,12 @@ pause = -1
 # Funktion die über ob die Escape Taste für Pausemenu gedrückt wurde.
 def pauseupdate():
     global pause
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_ESCAPE]:
-        pause = pause * -1
+    for event in pygame.event.get():
+        if event.type == pygame.K_PAUSE:
+            pause = pause * -1
+    # keys = pygame.key.get_pressed()
+    # if keys[pygame.K_ESCAPE]:
+    #     pause = pause * -1
 
 # Funktion die das Bild für die Pause einfügt wenn var pause 1 ist.
 def pausemenu():
