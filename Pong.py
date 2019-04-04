@@ -4,7 +4,6 @@ import time
 
 pygame.init()
 
-
 # Öffnen von Images
 pauseimg = pygame.image.load("pause.png")
 
