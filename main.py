@@ -12,8 +12,6 @@ var = var()
 pauseimg = pygame.image.load("pause.png")
 
 # Spielefenster wird erstellt und weitere Nebeneinstellungen
-# sizex = 1200
-# sizey = 675
 win = pygame.display.set_mode((var.sizex, var.sizey))
 pygame.display.set_caption("Pong")
 
@@ -31,7 +29,16 @@ def pausemenu():
     if var.pause == 1:
         win.blit(pauseimg, (380, 200))
 
-
+def restart():
+    if var.pause == 1:
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_r]:
+            ball.vel_list = [-6, -5, -4, -3, 3, 4, 5, 6]
+            ball.velx = choice(ball.vel_list)
+            ball.vely = choice(ball.vel_list)
+            ball.x = 600
+            ball.y = 336
+            var.pause = var.pause * -1
 
 # Instanzen des Balles und der Spieler werden erstellt.
 pl_left = player.player(x=20, y=300, vel=6, color=(0, 255, 0))
@@ -51,6 +58,7 @@ while var.run:
     pauseupdate()
     if var.pause == 1:
         pausemenu()
+        restart()
     elif var.pause == -1:
         # Füllen des Spielefensters.
         win.fill((255, 255, 255))
