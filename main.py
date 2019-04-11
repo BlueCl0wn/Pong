@@ -3,6 +3,7 @@ import time
 from instances import *
 import collide
 import menu
+# import live_counter
 
 pygame.init()
 # Spielefenster wird erstellt und weitere Nebeneinstellungen
@@ -22,7 +23,10 @@ while var.run:
     menu.pauseupdate()
     if var.pause == 1:
         menu.pausemenu()
-        menu.restart()
+        if var.pause == 1:
+            keys = pygame.key.get_pressed()
+            if keys[pygame.K_r]:
+                menu.restart()
     elif var.pause == -1:
         # Fuellen des Spielefensters.
         win.fill((255, 255, 255))

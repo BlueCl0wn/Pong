@@ -17,12 +17,9 @@ def pausemenu():
         win.blit(pauseimg, (380, 200))
 
 def restart():
-    if var.pause == 1:
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_r]:
-            ball.vel_list = [-6, -5, -4, -3, 3, 4, 5, 6]
-            ball.velx = choice(ball.vel_list)
-            ball.vely = choice(ball.vel_list)
-            ball.x = 600
-            ball.y = 336
-            var.pause = var.pause * -1
+        ball.vel_list = [-6, -5, -4, -3, 3, 4, 5, 6]
+        ball.velx = choice(ball.vel_list)
+        ball.vely = choice(ball.vel_list)
+        ball.x = 600
+        ball.y = 336
+        var.pause = var.pause * -1

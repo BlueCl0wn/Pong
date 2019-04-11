@@ -11,4 +11,6 @@ var = var()
 win = pygame.display.set_mode((var.sizex, var.sizey))
 
 # Oeffnen von Images
-pauseimg = pygame.image.load("pause.png")
+pauseimg = pygame.image.load("images/pause.png")
+green_heart = pygame.image.load("images/green_heart.png")
+red_heart = pygame.image.load("images/red_heart.png")

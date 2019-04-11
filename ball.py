@@ -14,10 +14,11 @@ class ball():
         self.y = 336
         self.move = 0
         self.color = color
+        self.radius = 20
     def moveball(self):
         self.x += self.velx
         self.y += self.vely
         if self.y > (var.sizey-20) or self.y < (0+20):
             self.vely = self.vely * -1
     def draw(self):
-        pygame.draw.circle(win, self.color, (self.x, self.y), 20, 0)
+        pygame.draw.circle(win, self.color, (self.x, self.y), self.radius, 0)
