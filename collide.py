@@ -3,7 +3,7 @@ from instances import *
 def colllide():
     # Es wird ueberprueft ob der linke Spieler beruehrt wird, wenn ja wird der Ball abgestossen.
     if ball.velx < 0:
-        # Es wird überprueft ob der Ball auf der gleichen y-Hoehe ist wie der linke Spieler.
+        # Es wird ueberprueft ob der Ball auf der gleichen y-Hoehe ist wie der linke Spieler.
         if ball.y >= (pl_left.y - 10) and ball.y <= (pl_left.y + 110):
             # Es wird ueberprueft ob der Ball auf der gleichen x Hoehe ist wie der linke Spieler.
             if ball.x <= 60 and ball.x >= 54:
