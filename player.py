@@ -32,7 +32,6 @@ class player():
     def moveright(self):
         if self.counter > 0:
             self.counter -= 1
-            print(self.counter)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_UP]:
             self.y -= self.vel

@@ -1,5 +1,5 @@
 import pygame
-import ball
+import instances
 
 class var():
     def __init__(self):
