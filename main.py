@@ -8,14 +8,14 @@ import collide
 
 pygame.init()
 var = var()
-# Öffnen von Images
+# Oeffnen von Images
 pauseimg = pygame.image.load("pause.png")
 
 # Spielefenster wird erstellt und weitere Nebeneinstellungen
 win = pygame.display.set_mode((var.sizex, var.sizey))
 pygame.display.set_caption("Pong")
 
-# Funktion die über ob die Escape Taste für Pausemenu gedrückt wurde.
+# Funktion die ueber ob die Escape Taste fuer Pausemenu gedrueckt wurde.
 def pauseupdate():
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:
@@ -23,7 +23,7 @@ def pauseupdate():
             var.pause = var.pause * -1
             var.counter += 10
 
-# Funktion die das Bild für die Pause einfügt wenn var pause 1 ist.
+# Funktion die das Bild für die Pause einfuegt wenn var pause 1 ist.
 def pausemenu():
     global pause
     if var.pause == 1:
@@ -50,7 +50,7 @@ while var.run:
     pygame.time.delay(30)
     if var.counter > 0:
         var.counter -= 1
-    # Es wird überprüft ob das Spiel geschlossen werden soll.
+    # Es wird ueberprueft ob das Spiel geschlossen werden soll.
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             var.run = 0
@@ -60,7 +60,7 @@ while var.run:
         pausemenu()
         restart()
     elif var.pause == -1:
-        # Füllen des Spielefensters.
+        # Fuellen des Spielefensters.
         win.fill((255, 255, 255))
 
         # Funktionen zum Bewegen der Instanzen.

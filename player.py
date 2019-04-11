@@ -1,7 +1,7 @@
 import pygame
 from vars import var
 
-# class player()
+# class player
 var = var()
 win = pygame.display.set_mode((var.sizex, var.sizey))
 

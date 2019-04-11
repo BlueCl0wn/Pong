@@ -6,11 +6,11 @@ pl_right = player.player(x=1160, y=300, vel=6, color=(0, 0, 255))
 ball = ball.ball()
 
 def colllide():
-    # Es wird überprüft ob der __linke__ Spieler berührt wird, wenn ja wird der Ball abgestoßen.
+    # Es wird ueberprueft ob der __linke__ Spieler beruehrt wird, wenn ja wird der Ball abgestossen.
     if ball.velx < 0:
-        # Es wird überprüft ob der Ball auf der gleichen y-Höhe ist wie der linke Spieler.
+        # Es wird überprueft ob der Ball auf der gleichen y-Hoehe ist wie der linke Spieler.
         if ball.y >= (pl_left.y - 10) and ball.y <= (pl_left.y + 110):
-            # Es wird überprüft ob der Bal auf der gleichen x-Höhe ist wie der linke Spieler.
+            # Es wird überprueft ob der Ball auf der gleichen x-Hoehe ist wie der linke Spieler.
             if ball.x <= 60 and ball.x >= 54:
                 ball.x = 60
                 ball.velx = ball.velx * -1
@@ -24,11 +24,11 @@ def colllide():
                     ball.y = (pl_left.y + 100 + 20)
                     ball.vely = ball.vely * -1
                     pl_left.counter += 60
-    # Es wird überprüft ob der __rechte__ Spieler berührt wird, wenn ja wird der Ball abgestoßen.
+    # Es wird ueberprueft ob der __rechte__ Spieler beruehrt wird, wenn ja wird der Ball abgestossen.
     elif ball.velx > 0:
-        # Es wird überprüft ob der Ball auf der gleichen y-Höhe ist wie der rechte Spieler.
+        # Es wird ueberprueft ob der Ball auf der gleichen y-Hoehe ist wie der rechte Spieler.
         if ball.y >= (pl_right.y - 10) and ball.y <= (pl_right.y + 110):
-            # Es wird überprüft ob der Ball auf der gleichen x-Höhe ist wie der rechte Spieler.
+            # Es wird ueberprueft ob der Ball auf der gleichen x-Hoehe ist wie der rechte Spieler.
             if ball.x > 1140 and ball.x <= 1146:
                 ball.x = 1140
                 ball.velx = ball.velx * -1
