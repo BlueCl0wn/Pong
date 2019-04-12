@@ -6,7 +6,7 @@ def count_lives():
     global lives_blue
     global lives_green
     # Is the ball right outside of the screen?
-    if ball.x >= var.sizex - 20:
+    if ball.x >= var.sizex:
         # Has the Player enough lives?
         if lives_blue > 0:
             lives_blue -= 1
@@ -15,7 +15,7 @@ def count_lives():
             win.blit(blue_wins, (380, 200))
             menu.restart()
     # Is the ball left outside of the screen?
-    elif ball.x <= 0 + 20:
+    elif ball.x <= 0:
         # Has the Player enough lives?
         if lives_green > 0:
             lives_green -= 1

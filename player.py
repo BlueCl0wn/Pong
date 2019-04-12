@@ -12,6 +12,8 @@ class player():
         self.vel = vel
         self.color = color
         self.counter = 0
+        self.width = 20
+        self.height = 100
 
     # Funktion zum bewegen des linken Spielers
     def moveleft(self):
@@ -44,4 +46,4 @@ class player():
             if self.y > 575:
                 self.y = 575
     def draw(self):
-        pygame.draw.rect(win, self.color, (self.x, self.y, 20, 100))
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))

@@ -24,9 +24,9 @@ while var.run:
     menu.pauseupdate()
     if var.pause == 1:
         menu.pausemenu()
-        if var.pause == 1:
+        if var.pause == 1: # pausemenu active
             menu.mainrestart()
-    elif var.pause == -1:
+    elif var.pause == -1: # pausemenu negative
         # Fuellen des Spielefensters.
         win.fill((255, 255, 255))
 
@@ -35,7 +35,10 @@ while var.run:
         pl_right.moveright()
         ball.moveball()
 
+        # Funktion zum ueberpruefen ob der Ball einen der Spieler berührt.
         collide.colllide()
+
+        # Funktion die die Leben der Spieler zaehlt.
         live_counter.count_lives()
         # Instanzen werden gezeichnet.
         pl_left.draw()
