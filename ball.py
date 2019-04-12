@@ -7,7 +7,7 @@ win = pygame.display.set_mode((var.sizex, var.sizey))
 # class Ball
 class ball():
     def __init__(self, color=(255, 0 ,0)):
-        self.vel_list = [-6, -5, -4, -3, 3, 4, 5, 6]
+        self.vel_list = [-6, -5, -4, 4, 5, 6]
         self.velx = choice(self.vel_list)
         self.vely = choice(self.vel_list)
         self.x = 600

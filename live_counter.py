@@ -1,20 +1,28 @@
 import pygame
-from instances import green_heart
-from instances import red_heart
+from instances import *
 import menu
 
-
-lives_right = 3
-lives_left = 3
 def count_lives():
-    # Ist der Ball rechts ausserhalb des Bildschirms?
-    if ball.x == var.sizex - 20:
-        # Hat Spiler rechts noch ein Leben?
-            if lives_right > 0:
-                menu.restart()
-            else:
-                
+    global lives_blue
+    global lives_green
+    # Is the ball right outside of the screen?
+    if ball.x >= var.sizex - 20:
+        # Has the Player enough lives?
+        if lives_blue > 0:
+            lives_blue -= 1
+            menu.respawn()
+        else:
+            win.blit(blue_wins, (380, 200))
+            menu.restart()
+    # Is the ball left outside of the screen?
+    elif ball.x <= 0 + 20:
+        # Has the Player enough lives?
+        if lives_green > 0:
+            lives_green -= 1
+            menu.respawn()
+        else:
+            win.blit(green_wins, (380, 200))
+            menu.restart()
 
 
-
-def draw():
+# def draw():

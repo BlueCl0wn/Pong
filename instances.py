@@ -10,7 +10,12 @@ ball = ball.ball()
 var = var()
 win = pygame.display.set_mode((var.sizex, var.sizey))
 
+lives_blue = 3
+lives_green = 3
+
 # Oeffnen von Images
 pauseimg = pygame.image.load("images/pause.png")
 green_heart = pygame.image.load("images/green_heart.png")
-red_heart = pygame.image.load("images/red_heart.png")
+blue_heart = pygame.image.load("images/blue_heart.png")
+green_wins = pygame.image.load("images/green_wins.png")
+blue_wins = pygame.image.load("images/blue_wins.png")

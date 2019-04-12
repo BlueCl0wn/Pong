@@ -3,6 +3,7 @@ import time
 from instances import *
 import collide
 import menu
+import live_counter
 # import live_counter
 
 pygame.init()
@@ -13,8 +14,8 @@ pygame.display.set_caption("Pong")
 # Main Loop
 while var.run:
     pygame.time.delay(30)
-    if var.counter > 0:
-        var.counter -= 1
+    if var.pausecounter > 0:
+        var.pausecounter -= 1
     # Es wird ueberprueft ob das Spiel geschlossen werden soll.
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -24,9 +25,7 @@ while var.run:
     if var.pause == 1:
         menu.pausemenu()
         if var.pause == 1:
-            keys = pygame.key.get_pressed()
-            if keys[pygame.K_r]:
-                menu.restart()
+            menu.mainrestart()
     elif var.pause == -1:
         # Fuellen des Spielefensters.
         win.fill((255, 255, 255))
@@ -37,7 +36,7 @@ while var.run:
         ball.moveball()
 
         collide.colllide()
-
+        live_counter.count_lives()
         # Instanzen werden gezeichnet.
         pl_left.draw()
         pl_right.draw()

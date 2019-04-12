@@ -6,9 +6,9 @@ from instances import *
 def pauseupdate():
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:
-        if var.counter == 0:
+        if var.pausecounter == 0:
             var.pause = var.pause * -1
-            var.counter += 10
+            var.pausecounter += 10
 
 # Funktion die das Bild für die Pause einfuegt wenn var pause 1 ist.
 def pausemenu():
@@ -16,10 +16,29 @@ def pausemenu():
     if var.pause == 1:
         win.blit(pauseimg, (380, 200))
 
-def restart():
-        ball.vel_list = [-6, -5, -4, -3, 3, 4, 5, 6]
+def varpause():
+    var.pause = var.pause * -1
+
+# def countdown()
+
+def respawn():
         ball.velx = choice(ball.vel_list)
         ball.vely = choice(ball.vel_list)
         ball.x = 600
         ball.y = 336
-        var.pause = var.pause * -1
+        # countdown()
+
+def restart():
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_r]:
+        lives_blue = 3
+        lives_green = 3
+        respawn()
+
+def mainrestart():
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_r]:
+        lives_blue = 3
+        lives_green = 3
+        respawn()
+        varpause()
