@@ -4,6 +4,7 @@ from vars import var
 
 var = var()
 win = pygame.display.set_mode((var.sizex, var.sizey))
+
 # class Ball
 class ball():
     def __init__(self, color=(255, 0 ,0)):
@@ -15,10 +16,14 @@ class ball():
         self.move = 0
         self.color = color
         self.radius = 20
+
+    # Bewegt den Ball und haelt ihn innerhalb des Fensters.
     def moveball(self):
         self.x += self.velx
         self.y += self.vely
         if self.y > (var.sizey - self.radius) or self.y < (0 + self.radius):
             self.vely = self.vely * -1
+
+    # Zeichnet den Circle.
     def draw(self):
         pygame.draw.circle(win, self.color, (self.x, self.y), self.radius, 0)

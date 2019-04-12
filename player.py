@@ -30,6 +30,7 @@ class player():
             # erzeugt Spieleborder
             if self.y > 575:
                 self.y = 575
+
     # Funktion zum bewegen des rechten Spielers.
     def moveright(self):
         if self.counter > 0:
@@ -45,5 +46,7 @@ class player():
             # erzeugt Spieleborder
             if self.y > 575:
                 self.y = 575
+
+    # Zeichnet das Rectangle.
     def draw(self):
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
