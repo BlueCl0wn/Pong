@@ -26,19 +26,20 @@ def respawn():
         ball.vely = choice(ball.vel_list)
         ball.x = 600
         ball.y = 336
+        pygame.time.delay(1000)
         # countdown()
 
 def restart():
     keys = pygame.key.get_pressed()
     if keys[pygame.K_r]:
-        lives_blue = 3
-        lives_green = 3
+        goal_blue = 0
+        goal_green = 0
         respawn()
 
 def mainrestart():
     keys = pygame.key.get_pressed()
     if keys[pygame.K_r]:
-        lives_blue = 3
-        lives_green = 3
+        goal_blue = 0
+        goal_green = 0
         respawn()
         varpause()

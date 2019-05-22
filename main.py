@@ -4,12 +4,12 @@ from instances import *
 import collide
 import menu
 import live_counter
+import AI
 # import live_counter
 
 pygame.init()
 # Spielefenster wird erstellt und weitere Nebeneinstellungen
 pygame.display.set_caption("Pong")
-
 
 # Main Loop
 while var.run:
@@ -39,11 +39,16 @@ while var.run:
         collide.colllide()
 
         # Funktion die die Leben der Spieler zaehlt.
-        live_counter.count_lives()
+        live_counter.count_goals()
+
+        # KI Funktion
+        AI.play()
+
         # Instanzen werden gezeichnet.
         pl_left.draw()
         pl_right.draw()
         ball.draw()
+        # live_counter.draw()
 
     pygame.display.update()
 
