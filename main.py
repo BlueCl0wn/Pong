@@ -8,7 +8,7 @@ import AI
 # import live_counter
 
 pygame.init()
-# Spielefenster wird erstellt und weitere Nebeneinstellungen
+# Spielefenster wird erstellt
 pygame.display.set_caption("Pong")
 
 # Main Loop
