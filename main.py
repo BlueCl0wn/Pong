@@ -4,7 +4,7 @@ from instances import *
 import collide
 import menu
 import live_counter
-import AI
+#import AI
 # import live_counter
 
 pygame.init()
@@ -16,7 +16,7 @@ while var.run:
     pygame.time.delay(30)
     if var.pausecounter > 0:
         var.pausecounter -= 1
-    # Es wird ueberprueft ob das Spiel geschlossen werden soll.
+    # Es wird ueberprueft, ob das Spiel geschlossen werden soll.
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             var.run = 0
@@ -42,7 +42,7 @@ while var.run:
         live_counter.count_goals()
 
         # KI Funktion
-        AI.play()
+        #AI.play()
 
         # Instanzen werden gezeichnet.
         pl_left.draw()
