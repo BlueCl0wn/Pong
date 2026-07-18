@@ -20,6 +20,30 @@ def pausemenu():
         score_text = font.render(f"{goal_green} - {goal_blue}", True, (0, 0, 0))
         win.blit(score_text, (var.sizex // 2 - score_text.get_width() // 2, 300))
 
+# Funktion für den Score-Bildschirm
+def score_screen():
+    if var.score_screen == 1:
+        # Halbdurchsichtiger Hintergrund
+        overlay = pygame.Surface((var.sizex, var.sizey))
+        overlay.fill((0, 0, 0))
+        overlay.set_alpha(180)
+        win.blit(overlay, (0, 0))
+        
+        # Anzeige des aktuellen Standes
+        score_text = font.render(f"{goal_green} - {goal_blue}", True, (255, 255, 255))
+        win.blit(score_text, (var.sizex // 2 - score_text.get_width() // 2, var.sizey // 2 - 50))
+        
+        # Anzeige einer Nachricht
+        message = small_font.render("Press SPACE to continue", True, (255, 255, 255))
+        win.blit(message, (var.sizex // 2 - message.get_width() // 2, var.sizey // 2 + 20))
+        
+        # Überprüfe, ob die Leertaste gedrückt wurde
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_SPACE]:
+            var.score_screen = 0
+            respawn()
+            pygame.time.delay(200)  # Verhindere mehrfaches Auslösen
+
 def varpause():
     var.pause = var.pause * -1
 

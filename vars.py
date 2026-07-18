@@ -8,3 +8,4 @@ class var():
         self.sizex = 1200
         self.sizey = 675
         self.pause = -1
+        self.score_screen = 0  # 0 = no score screen, 1 = show score screen

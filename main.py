@@ -22,7 +22,11 @@ while var.run:
             var.run = 0
 
     menu.pauseupdate()
-    if var.pause == 1:
+    
+    # Show score screen if active
+    if var.score_screen == 1:
+        menu.score_screen()
+    elif var.pause == 1:
         menu.pausemenu()
         if var.pause == 1: # pausemenu active
             menu.mainrestart()
@@ -35,7 +39,7 @@ while var.run:
         pl_right.moveright()
         ball.moveball()
 
-        # Funktion zum ueberpruefen ob der Ball einen der Spieler berührt.
+        # Funktion zum ueberpruefen ob der Ball einen der Spieler beruehrt.
         collide.colllide()
 
         # Funktion die die Leben der Spieler zaehlt.
