@@ -10,11 +10,15 @@ def pauseupdate():
             var.pause = var.pause * -1
             var.pausecounter += 10
 
-# Funktion die das Bild für die Pause einfuegt wenn var pause 1 ist.
+# Funktion die das Bild für die Pause einfügt und die Punkte anzeigt, wenn var pause 1 ist.
 def pausemenu():
     global pause
     if var.pause == 1:
         win.blit(pauseimg, (380, 200))
+        
+        # Anzeige der Punkte
+        score_text = font.render(f"{goal_green} - {goal_blue}", True, (0, 0, 0))
+        win.blit(score_text, (var.sizex // 2 - score_text.get_width() // 2, 300))
 
 def varpause():
     var.pause = var.pause * -1

@@ -13,5 +13,8 @@ win = pygame.display.set_mode((var.sizex, var.sizey))
 goal_blue = 0
 goal_green = 0
 
+# Schriftart für die Anzeige der Punkte
+font = pygame.font.SysFont('Arial', 40)
+
 # Oeffnen von Images
 pauseimg = pygame.image.load("images/pause.png")
