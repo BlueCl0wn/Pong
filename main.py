@@ -8,6 +8,7 @@ import live_counter
 # import live_counter
 
 pygame.init()
+pygame.font.init()
 # Spielefenster wird erstellt
 pygame.display.set_caption("Pong")
 
@@ -35,7 +36,7 @@ while var.run:
         pl_right.moveright()
         ball.moveball()
 
-        # Funktion zum ueberpruefen ob der Ball einen der Spieler berührt.
+        # Funktion zum ueberpruefen ob der Ball einen der Spieler beruehrt.
         collide.colllide()
 
         # Funktion die die Leben der Spieler zaehlt.
