@@ -9,12 +9,14 @@ def count_goals():
     if ball.x >= var.sizex:
         # Has the Player enough lives?
         goal_blue += 1
-        menu.respawn()
+        var.score_screen = 1  # Show score screen
+        pygame.time.delay(500)  # Small delay to ensure the screen updates
 
     # Is the ball left outside of the screen?
     elif ball.x <= 0:
         goal_green += 1
-        menu.respawn()
+        var.score_screen = 1  # Show score screen
+        pygame.time.delay(500)  # Small delay to ensure the screen updates
 
 
 def draw(goal_blue, goal_green):
